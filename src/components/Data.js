@@ -1,25 +1,17 @@
 import React, { useEffect, useState } from "react";
-import { TbTemperature, TbWind, TbTemperatureCelsius } from "react-icons/tb"
-import { WiHumidity } from "react-icons/wi";
 import { FaArrowUp, FaArrowDown } from "react-icons/fa"
 import classes from "./Data.module.css";
-import rain from "../icons/weather-icons-master/weather-icons-master/design/fill/animation-ready/rain.svg";
-import clear_sky from "../icons/weather-icons-master/weather-icons-master/design/fill/animation-ready/clear-day.svg";
-import few_clouds from "../icons/weather-icons-master/weather-icons-master/design/fill/animation-ready/partly-cloudy-day.svg";
-import snow from "../icons/weather-icons-master/weather-icons-master/design/fill/animation-ready/snow.svg";
-import mist from "../icons/weather-icons-master/weather-icons-master/design/fill/animation-ready/mist.svg";
-import thunderstorm from "../icons/weather-icons-master/weather-icons-master/design/fill/animation-ready/thunderstorms.svg";
-import broken_clouds from "../icons/weather-icons-master/weather-icons-master/design/fill/animation-ready/overcast.svg";
-import scattered_clouds from "../icons/weather-icons-master/weather-icons-master/design/fill/animation-ready/cloudy.svg"
-import shower_rain from "../icons/weather-icons-master/weather-icons-master/design/fill/animation-ready/hail.svg";
-import haze from "../icons/weather-icons-master/weather-icons-master/design/fill/animation-ready/haze.svg";
-import thermometer from "../icons/weather-icons-master/weather-icons-master/design/fill/animation-ready/thermometer.svg";
-import raindrop from "../icons/weather-icons-master/weather-icons-master/design/fill/animation-ready/raindrop.svg";
-import wind from "../icons/weather-icons-master/weather-icons-master/design/fill/animation-ready/wind.svg";
-import celsius from "../icons/weather-icons-master/weather-icons-master/design/fill/animation-ready/celsius.svg";
-import fahrenheit from "../icons/weather-icons-master/weather-icons-master/design/fill/animation-ready/fahrenheit.svg";
+import thermometer from "../icons/animation-ready/thermometer.svg";
+import raindrop from "../icons/animation-ready/raindrop.svg";
+import wind from "../icons/animation-ready/wind.svg";
+import celsius from "../icons/animation-ready/celsius.svg";
+import fahrenheit from "../icons/animation-ready/fahrenheit.svg";
+import { setWeatherIcon } from "./DataFunctions/weatherIcon";
+import { getWeatherForecast } from "./DataFunctions/weatherForecast";
+import FiveDayData from "./FiveDayData";
 
 const Data = (props) => {
+    
     var data = props.cityDetails;
     var date = data.date_time_wti.slice(0, 16);
     var time = data.time_12;
@@ -32,39 +24,12 @@ const Data = (props) => {
     var real_feel = (data.main.feels_like-273.15).toFixed(0);
     var high = (data.main.temp_max - 273.15).toFixed(0);
     var low = (data.main.temp_min - 273.15).toFixed(0);
-    var temp;
-
-    if (weather === "clear sky") {
-        temp = clear_sky;
-    }
-    else if (weather === "few clouds") {
-        temp = few_clouds;
-    }
-    else if (weather === "scattered clouds") {
-        temp = scattered_clouds;
-    }
-    else if (weather === "broken clouds" || weather === "overcast clouds") {
-        temp = broken_clouds;
-    }
-    else if (weather === "shower rain" || weather==="light intensity drizzle" ) {
-        temp = shower_rain;
-    }
-    else if (weather === "rain" || weather === "light rain" || weather==="moderate rain") {
-        temp = rain;
-    }
-    else if (weather === "thunderstorm") {
-        temp = thunderstorm;
-    }
-    else if (weather === "snow") {
-        temp = snow;
-    }
-    else if (weather === "mist") {
-        temp = mist;
-    }
-    else if (weather === "haze") {
-        temp = haze;
-    }
-
+    
+    var day = data.date_time_wti.slice(0,3);
+    var temp = setWeatherIcon(weather);
+    var list = data.list;
+    var arr = getWeatherForecast(list,day);
+    
     return (
         <div className={classes.dataContainer}>
             <div className={classes.dateTime}>
@@ -89,6 +54,10 @@ const Data = (props) => {
                 <span className={classes.high_low}>
                     <FaArrowUp className={classes.highIcon} /><span className={classes.wordWeight}>High : </span>{high}<sup className={classes.degree}>o</sup><span className={classes.line}>|</span><FaArrowDown className={classes.lowIcon} /> <span className={classes.wordWeight}>Low :</span>{low}<sup className={classes.degree}>o</sup>
                 </span>
+            </div>
+            <div className={classes.next5}>NEXT 5 DAYS</div>
+            <div className={classes.forecast}>
+                <FiveDayData arr={arr} />
             </div>
         </div>
     );

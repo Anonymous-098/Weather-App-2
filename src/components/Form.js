@@ -7,7 +7,6 @@ import Data from "./Data";
 
 const Form = (props) => {
     const [value, setValue] = useState("");
-    const [isClicked, setIsClicked] = useState(false);
     const [isLoading,setIsLoading] = useState(false);
 
     const inputHandler = (e) => {
@@ -30,7 +29,6 @@ const Form = (props) => {
                 ...forecast
             }
             props.setCityDetails(all_det);
-            setIsClicked(true);
             setIsLoading(false);
         }
         getWeather();

@@ -8,7 +8,7 @@
 
 .card {
     width: 500px;
-    height: 550px;
+    height: 600px;
     box-shadow: rgb(15, 15, 15) 5px 10px 10px 5px;
     background: rgb(9, 33, 79);
     background: linear-gradient(315deg, rgba(9, 33, 79, 1) 0%, rgba(22, 61, 128, 1) 74%);
@@ -17,13 +17,13 @@
 @media screen and (max-width:900px) {
     .card{
         width: 450px;
-        height: 550px;
+        height: 600px;
     }
 }
 
 @media screen and (max-width:550px) {
     .card{
         width: 300px;
-        height: 550px;
+        height: 600px;
     }
 }

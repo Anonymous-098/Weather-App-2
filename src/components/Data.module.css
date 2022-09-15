@@ -91,3 +91,19 @@
 .degree{
     padding-bottom: 0.5rem;
 }
+
+.next5{
+    border-bottom: 0.01rem solid rgba(255, 255, 255, 0.5);
+    padding: 0.5rem;
+    margin: 0 2rem;
+    font-weight: 300;
+}
+
+.forecast{
+    display: flex;
+    /* background-color: #61d9fb; */
+    margin: 0 2rem;
+    column-gap: 3rem;
+    text-align: center;
+    font-size: 0.75rem;
+}
