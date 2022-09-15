@@ -34,14 +34,14 @@ const Home = (props) => {
     }
 
     return (
-        <div>
+        <>
             {!isClicked && !isLoading && <div className={classes.container}>
                 <h1 className={classes.heading}>Weather App</h1>
                 <button className={classes.btn} onClick={clickHandler} >Get Started</button>
             </div>}
-            {isLoading && <InfinitySpin color="#ffffff" />}
+            {isLoading && <div className={classes.wrapper}><InfinitySpin color="#ffffff" /></div>}
             {isClicked && !isLoading && <Form cityDetails={cityDetails} setCityDetails={setCityDetails} />}
-        </div>
+        </>
     );
 }
 

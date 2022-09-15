@@ -7,7 +7,7 @@ import Data from "./Data";
 
 const Form = (props) => {
     const [value, setValue] = useState("");
-    const [isLoading,setIsLoading] = useState(false);
+    const [isLoading, setIsLoading] = useState(false);
 
     const inputHandler = (e) => {
         setValue(e.target.value);
@@ -36,14 +36,14 @@ const Form = (props) => {
     }
 
     return (
-        <div>
+        <>
             <form className={classes.form} onSubmit={submitHandler}>
                 <input className={classes.input} type="text" placeholder="Search for a city here" onChange={inputHandler} value={value} ></input>
                 <button type="submit" className={classes.icon} ><FaSearch /></button>
             </form>
-            {isLoading && <InfinitySpin color="#ffffff" />}
+            {isLoading && <div className={classes.wrapper}><InfinitySpin color="#ffffff" /></div>}
             {!isLoading && <Data cityDetails={props.cityDetails} />}
-        </div>
+        </>
     )
 }
 

@@ -1,4 +1,4 @@
-.form{
+.form {
     width: 100%;
     height: 7.5vh;
     display: flex;
@@ -8,7 +8,7 @@
     color: white;
 }
 
-.input{
+.input {
     outline: none;
     width: 70%;
     height: 65%;
@@ -21,20 +21,29 @@
     padding-left: 0.75rem;
 }
 
-.input:focus{
+.input:focus {
     box-shadow: 0 0 0 4px rgb(51, 51, 183);
 }
 
-.icon{
+.icon {
     padding: 0.7rem;
     border: 2px solid white;
     color: white;
     background: transparent;
 }
 
-.icon:hover{
+.icon:hover {
     padding: 0.7rem;
     border: 2px solid white;
     color: white;
     cursor: pointer;
+}
+
+.wrapper {
+    display: flex;
+    text-align: center;
+    width: 100%;
+    height: 80%;
+    align-items: center;
+    justify-content: center;
 }
