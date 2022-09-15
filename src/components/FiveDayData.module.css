@@ -1,4 +1,9 @@
-.animation{
-    width: 7.5rem;
-    height: 7.5rem;
+.maxTemp{
+    margin-right: 5px;
+}
+
+.minTemp{
+    margin-left: 5px;
+    font-weight: 300;
+    opacity: 0.8;
 }

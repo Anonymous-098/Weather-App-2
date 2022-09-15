@@ -8,12 +8,12 @@ const FiveDayData = (props) => {
         <>
             {props.arr.map((val) => {
                 var icon = setWeatherIcon(val.icon);
-                return (<div key={val.day} >
+                return (<div key={val.day} className={classes.flexItem} >
                     <p>{val.day}</p>
                     <img src={icon} ></img>
-                    <p>
-                        <span>{val.max}°</span>
-                        <span>{val.min}°</span>
+                    <p className={classes.spacing}>
+                        <span className={classes.maxTemp}>{val.max}°</span>
+                        <span className={classes.minTemp}>{val.min}°</span>
                     </p>
                 </div>)
             })}
