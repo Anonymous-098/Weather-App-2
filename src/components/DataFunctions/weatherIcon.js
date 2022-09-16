@@ -25,7 +25,7 @@ export function setWeatherIcon (weather){
     else if (weather === "shower rain" || weather==="light intensity drizzle" ) {
         return shower_rain;
     }
-    else if (weather === "rain" || weather === "light rain" || weather==="moderate rain") {
+    else if (weather === "rain" || weather === "light rain" || weather==="moderate rain" || weather==="heavy intensity rain") {
         return rain;
     }
     else if (weather === "thunderstorm") {

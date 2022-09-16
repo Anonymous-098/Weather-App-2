@@ -2,7 +2,6 @@
     display: flex;
     flex-direction: column;
     color: white;
-    margin-top: 1rem;
     padding: 1.5rem;
     row-gap: 10px;
 }
@@ -47,7 +46,6 @@
 .desc{
     display: flex;
     flex-direction: column;
-    /* background-color: coral; */
     font-family: inherit;
     font-weight: 300;
     font-size: 0.75rem;
@@ -99,10 +97,35 @@
     font-weight: 300;
 }
 
-.forecast{
+/* .forecast{
     display: flex;
     margin: 0 1rem;
     column-gap: 3rem;
     text-align: center;
     font-size: 0.75rem;
+} */
+
+.forecast{
+    display: grid;
+    grid-template-columns: repeat(6,1fr);
+    font-size: 0.75rem;
+    grid-gap: 4px;
+    text-align: center;
+}
+
+.forecast div{
+    grid-column: span 2;
+}
+
+.forecast div:nth-child(4){
+    grid-column: span 3;
+    /* background-color: aquamarine; */
+    margin-left: 5rem;
+    margin-top: 1rem;
+}
+.forecast div:nth-child(5){
+    grid-column: span 3;
+    /* background-color: blueviolet; */
+    margin-right: 5rem;
+    margin-top: 1rem;
 }
