@@ -1,13 +1,13 @@
-import rain from "../../icons/animation-ready/rain.svg";
-import clear_sky from "../../icons/animation-ready/clear-day.svg";
-import few_clouds from "../../icons/animation-ready/partly-cloudy-day.svg";
-import snow from "../../icons/animation-ready/snow.svg";
-import mist from "../../icons/animation-ready/mist.svg";
-import thunderstorm from "../../icons/animation-ready/thunderstorms.svg";
-import broken_clouds from "../../icons/animation-ready/overcast.svg";
-import scattered_clouds from "../../icons/animation-ready/cloudy.svg"
-import shower_rain from "../../icons/animation-ready/hail.svg";
-import haze from "../../icons/animation-ready/haze.svg";
+import rain from "../../icons/rain.svg";
+import clear_sky from "../../icons/clear-day.svg";
+import few_clouds from "../../icons/partly-cloudy-day.svg";
+import snow from "../../icons/snow.svg";
+import mist from "../../icons/mist.svg";
+import thunderstorm from "../../icons/thunderstorms.svg";
+import broken_clouds from "../../icons/overcast.svg";
+import scattered_clouds from "../../icons/cloudy.svg"
+import shower_rain from "../../icons/hail.svg";
+import haze from "../../icons/haze.svg";
 
 export function setWeatherIcon (weather){
     if (weather === "clear sky") {

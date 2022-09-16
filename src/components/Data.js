@@ -1,11 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { FaArrowUp, FaArrowDown } from "react-icons/fa"
 import classes from "./Data.module.css";
-import thermometer from "../icons/animation-ready/thermometer.svg";
-import raindrop from "../icons/animation-ready/raindrop.svg";
-import wind from "../icons/animation-ready/wind.svg";
-import celsius from "../icons/animation-ready/celsius.svg";
-import fahrenheit from "../icons/animation-ready/fahrenheit.svg";
+import thermometer from "../icons/thermometer.svg";
+import raindrop from "../icons/raindrop.svg";
+import wind from "../icons/wind.svg";
+import celsius from "../icons/celsius.svg";
 import { setWeatherIcon } from "./DataFunctions/weatherIcon";
 import { getWeatherForecast } from "./DataFunctions/weatherForecast";
 import FiveDayData from "./FiveDayData";
@@ -42,12 +41,12 @@ const Data = (props) => {
                 <span>{weather}</span>
             </div>
             <div className={classes.weatherData}>
-                <img src={temp} className={classes.animation}></img>
-                <span className={classes.tempValue}>{temperature}<img src={celsius} className={classes.celsius}></img></span>
+                <img src={temp} className={classes.animation} alt="#"></img>
+                <span className={classes.tempValue}>{temperature}<img src={celsius} className={classes.celsius} alt="#"></img></span>
                 <div className={classes.desc}>
-                    <span><img src={thermometer}></img>Real feel : {real_feel} <sup className={classes.degree}>o</sup></span>
-                    <span><img src={raindrop}></img>Humidity : {humidity}%</span>
-                    <span><img src={wind}></img>Wind : {windSpeed}km/h</span>
+                    <span><img src={thermometer} alt="#"></img>Real feel : {real_feel} <sup className={classes.degree} alt="#">o</sup></span>
+                    <span><img src={raindrop} alt="#"></img>Humidity : {humidity}%</span>
+                    <span><img src={wind} alt="#"></img>Wind : {windSpeed}km/h</span>
                 </div>
             </div>
             <div>
